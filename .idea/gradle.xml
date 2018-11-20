@@ -8,8 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/activitymangertest" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/bigimage" />
+            <option value="$PROJECT_DIR$/sharedesktoptest" />
             <option value="$PROJECT_DIR$/windowtest" />
           </set>
         </option>

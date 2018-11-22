@@ -15,19 +15,24 @@ public class ThreeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_three);
         ActivityManager am = ActivityManagerUtil.getInstanse(ThreeActivity.this);
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            List<ActivityManager.AppTask> appTasks = am.getAppTasks();
-
-            Log.d(TAG, "appTasks: "+appTasks.size());
-             ActivityManager.AppTask task0 = appTasks.get(0);
-            ActivityManager.RecentTaskInfo recentTaskInfo = task0.getTaskInfo();
-
-                task0.finishAndRemoveTask();
-                task0.moveToFront();
-
+        /**
+         *
+         *         moveTaskToBack(true);
+         *   j将当前activity栈移到后台
+         *   参数为 false 时 只有当前activity 为根activity时有效
+         *   参数为 ture 时 ，任何有一个activity都有效
+         */
+        moveTaskToBack(true);
 
 
-        }
-        this.finish();
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+//            List<ActivityManager.AppTask> appTasks = am.getAppTasks();
+//            Log.d(TAG, "appTasks: "+appTasks.size());
+//             ActivityManager.AppTask task0 = appTasks.get(0);
+//            ActivityManager.RecentTaskInfo recentTaskInfo = task0.getTaskInfo();
+//                task0.finishAndRemoveTask();
+//                task0.moveToFront();
+//        }
+//        this.finish();
     }
 }

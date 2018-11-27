@@ -1,1 +1,1 @@
-include ':app', ':bigimage', ':windowtest', ':activitymangertest', ':sharedesktoptest'
+include ':app', ':bigimage', ':windowtest', ':activitymangertest', ':sharedesktoptest', ':toasttest'

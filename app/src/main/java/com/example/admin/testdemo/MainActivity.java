@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        PermissionPageUtils.getInstance(this).jumpPermissionPage();
 
 //        C:\Users\dong.li> adb shell dumpsys activity top
 //        TASK com.iqoo.secure id=164
@@ -33,20 +34,20 @@ public class MainActivity extends AppCompatActivity {
 
 
 //        Intent appIntent = this.getPackageManager().getLaunchIntentForPackage("com.iqoo.secure");
-        Intent appIntent = this.getPackageManager().getLaunchIntentForPackage("activity.SoftPermissionDetailActivity");
-
-
-        //        startSafely(context,appIntent);
-        if(appIntent != null){
-            this.startActivity(appIntent);
-//            floatingView = new SettingFloatingView(this, "SETTING", getApplication(), 0);
-//            floatingView.createFloatingView();
-//            floatingView = new SettingFloatingView(this, "SETTING", context.getApplication(), 0);
-//            floatingView.createFloatingView();
-//            return;
-        }else {
-            Toast.makeText(this,"无法跳转",Toast.LENGTH_LONG).show();
-        }
+//        Intent appIntent = this.getPackageManager().getLaunchIntentForPackage("activity.SoftPermissionDetailActivity");
+//
+//
+//        //        startSafely(context,appIntent);
+//        if(appIntent != null){
+//            this.startActivity(appIntent);
+////            floatingView = new SettingFloatingView(this, "SETTING", getApplication(), 0);
+////            floatingView.createFloatingView();
+////            floatingView = new SettingFloatingView(this, "SETTING", context.getApplication(), 0);
+////            floatingView.createFloatingView();
+////            return;
+//        }else {
+//            Toast.makeText(this,"无法跳转",Toast.LENGTH_LONG).show();
+//        }
 
     }
 }

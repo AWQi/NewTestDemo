@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity";
     private ImageView mImageView;
     private LargeImageView largeImageView;
+    private  OprateLargeImage mOprateLargeImage;
     InputStream inputStream = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,9 +29,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        largeImageView =  findViewById(R.id.id_largetImageview);
         mImageView =  findViewById(R.id.mImageView);
-
+//        largeImageView =  findViewById(R.id.id_largetImageview);
+ //       mOprateLargeImage = findViewById(R.id.mOprateLargeImage);
         findViewById(R.id.part).setOnClickListener(this);
         findViewById(R.id.src).setOnClickListener(this);
         findViewById(R.id.s).setOnClickListener(this);
@@ -39,12 +40,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-            initLargetImageView();
-            initImageView();
-
+        initImageView();
+//        initLargetImageView();
+   //     initOprateLargetImageView();
 
     }
 
+    public  void  initOprateLargetImageView(){
+        try {
+            inputStream = getAssets().open("a.jpg");
+//           Bitmap bitmap = loadPartIamge(inputStream);
+            Bitmap bitmap = loadSampleImage(inputStream,0);
+
+
+//            Bitmap bitmap = loadCompressImage(inputStream,mImageView.getMeasuredWidth(),mImageView.getMeasuredHeight());
+            Log.d(TAG, "bitmap.getByteCount():"+    bitmap.getByteCount());
+
+            mOprateLargeImage.setImageBitmap(bitmap);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if (inputStream!=null){
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
     public  void  initLargetImageView(){
         try {
             inputStream = getAssets().open("a.jpg");

@@ -41,6 +41,7 @@ public class RecorderService  {
     private VirtualDisplay mVirtualDisplay;
 
     public RecorderService() {
+
     }
 
     public RecorderService(int mWidth, int mHeight, int mBitRate, int mDip, String mDsPath, MediaProjection mMediaProjectioin, final MySurfaceView surfaceView) {

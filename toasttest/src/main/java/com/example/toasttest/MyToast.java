@@ -10,6 +10,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
+import android.support.design.widget.BaseTransientBottomBar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -28,6 +29,8 @@ import java.lang.reflect.Method;
 
 public class MyToast {
     private static final String TAG = "MyToast";
+
+
     static private  Toast toast;
 //    static private MyToast myToast;
 //   static private  Field field;

@@ -1,6 +1,9 @@
 package com.example.toasttest;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,24 +17,45 @@ import java.lang.reflect.Field;
  * Created by admin on 2018/11/26.
  */
 
-public class ClickToast{
+public class ClickToast extends  Toast{
+    private static final String TAG = "ClickToast";
     private static Toast mToast;
     private static Button btn;
+
+    /**
+     * Construct an empty Toast object.  You must call {@link #setView} before you
+     * can call {@link #show}.
+     *
+     * @param context The context to use.  Usually your {@link Application}
+     *                or {@link Activity} object.
+     */
+    public ClickToast(Context context) {
+        super(context);
+    }
+
+    @Override
+    public void cancel() {
+        super.cancel();
+        Log.d(TAG, "cancel:  ----------------- ");
+    }
+
     public static void showToast (final Context context, int duration){
         if(mToast == null){
             LayoutInflater inflater = (LayoutInflater)context.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             //自定义布局
 
             btn= new Button(context);
+            btn.setText("Toast上的按钮");
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //这里可以做点击操作
                     } });
-            mToast = Toast.makeText(context.getApplicationContext(), "", duration);
+            mToast = ClickToast.makeText(context.getApplicationContext(), "Toast上的按钮", duration);
             //这里可以指定显示位置
             mToast.setGravity(Gravity.BOTTOM, 0, 0);
             mToast.setView(btn);
+
         }
             try {
             Object mTN ;
@@ -59,6 +83,8 @@ public class ClickToast{
 
 
 
+
+
 /**
  * 反射字段
  * @param object 要反射的对象
@@ -78,9 +104,4 @@ public class ClickToast{
 
         return null;
         }
-
-
-
-
-
         }

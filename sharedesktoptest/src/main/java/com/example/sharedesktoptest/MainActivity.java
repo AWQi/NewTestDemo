@@ -355,6 +355,15 @@ private EditText editText = null;
              }
          });
          editText = findViewById(R.id.editText);
+         findViewById(R.id.deskTop).setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                        MainActivity.this.moveTaskToBack(true);
+                        Intent intent = new Intent(MainActivity.this,DeskTopActivity.class);
+                        MainActivity.this.startActivity(intent);
+                 Log.d(TAG, "跳转DeskTop: ");
+             }
+         });
     }
         public void  permission(){
 
@@ -445,6 +454,7 @@ private EditText editText = null;
 
         layoutParams.gravity = Gravity.CENTER;
         WindowManager windowManager  = getWindowManager();
+//        windowManager.addView(,layoutParams);
         windowManager.addView(text,layoutParams);
 
 

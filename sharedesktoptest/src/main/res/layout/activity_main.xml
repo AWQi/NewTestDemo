@@ -74,5 +74,13 @@
         android:layout_y="383dp"
         android:text="check" />
 
+    <Button
+        android:id="@+id/deskTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="165dp"
+        android:layout_y="462dp"
+        android:text="回到桌面" />
+
 
 </AbsoluteLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#00000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.sharedesktoptest.DeskTopActivity">
+    <ImageView
+        android:id="@+id/img"
+        android:background="@color/colorPrimary"
+        android:layout_width="200dp"
+        android:layout_height="2000dp" />
+ <!--   <com.example.sharedesktoptest.FloatView
+        android:background="@color/colorPrimary"
+        android:layout_width="50dp"
+        android:layout_height="50dp">
+
+    </com.example.sharedesktoptest.FloatView>
+-->
+</android.support.constraint.ConstraintLayout>
